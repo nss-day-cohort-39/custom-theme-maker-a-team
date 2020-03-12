@@ -13,3 +13,17 @@ const render = scoreCollection => {
         </article>
     `
 }
+
+export const changeScoreFontSize = () => {
+    const eventHub = document.querySelector('#container')
+    const score = document.querySelectorAll('.score')
+    
+    eventHub.addEventListener('fontSizeChanged', event => {
+        if ("fontSize" in event.detail) {
+            score.forEach(e => {
+                e.classList = []
+                return e.classList.add(event.detail.fontSize)
+            })
+        }
+    })
+}

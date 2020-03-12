@@ -13,3 +13,17 @@ const render = favoriteCollection => {
         </article>
     `
 }
+
+export const changeFavoriteFontSize = () => {
+    const eventHub = document.querySelector('#container')
+    const favoriteItem = document.querySelectorAll('.favoriteItem')
+    
+    eventHub.addEventListener('fontSizeChanged', event => {
+        if ("fontSize" in event.detail) {
+            favoriteItem.forEach(e => {
+                e.classList = []
+                return e.classList.add(event.detail.fontSize)
+            })
+        }
+    })
+}
