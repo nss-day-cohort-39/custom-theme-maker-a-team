@@ -1,5 +1,5 @@
 export const FavoriteItem = favorite => `
-    <section class="favoriteItem">
+    <section class="favoriteItem colorsSelector">
         <header class="favoriteItem_header">
             <h2>${favorite.title}</h2>
         </header>

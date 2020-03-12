@@ -1,15 +1,16 @@
-.blue {
+/* CSS themes for the background colors */
+.background--blue {
     background-color: lightskyblue;
 }
 
-.green {
+.background--green {
     background-color: darkseagreen;
 }
 
-.purple {
+.background--purple {
     background-color: mediumorchid;
 }
 
-.red {
+.background--red {
     background-color: darksalmon;
 }

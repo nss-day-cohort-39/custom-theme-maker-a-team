@@ -1,5 +1,5 @@
 export const NewsItem = news => `
-    <section class="newsItem">
+    <section class="newsItem colorsSelector">
         <header class="newsItem_header">
             <h2>${news.title}</h2>
         </header>
