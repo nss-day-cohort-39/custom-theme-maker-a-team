@@ -1,7 +1,7 @@
 import { Dashboard } from "./Dashboard.js"
-import { changeScoreFontSize } from "./sports/ScoreList.js"
-import { changeFavoriteFontSize } from "./favorites/FavoritesList.js"
-import { changeNewsFontSize } from "./news/NewsList.js"
+import { changeScoreFontSize, changeScoreBorderSize } from "./sports/ScoreList.js"
+import { changeFavoriteFontSize, changeFavoriteBorderSize } from "./favorites/FavoritesList.js"
+import { changeNewsFontSize, changeNewsBorderSize } from "./news/NewsList.js"
 
 /*
     1. Sort scores by date
@@ -13,3 +13,7 @@ document.querySelector("#container").innerHTML = Dashboard()
 changeFavoriteFontSize()
 changeScoreFontSize()
 changeNewsFontSize()
+
+changeFavoriteBorderSize()
+changeScoreBorderSize()
+changeNewsBorderSize()
