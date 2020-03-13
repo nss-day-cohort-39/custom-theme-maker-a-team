@@ -17,7 +17,7 @@ const render = favoriteCollection => {
 export const changeFavoriteFontSize = () => {
     const eventHub = document.querySelector('#container')
     const favoriteItem = document.querySelectorAll('.favoriteItem')
-    
+
     eventHub.addEventListener('fontSizeChanged', event => {
         if ("fontSize" in event.detail) {
             favoriteItem.forEach(e => {
@@ -25,5 +25,22 @@ export const changeFavoriteFontSize = () => {
                 return e.classList.add(event.detail.fontSize)
             })
         }
+    })
+}
+
+export const changeFavoriteBorderSize = () => {
+    const eventHub = document.querySelector('#container')
+    const favoriteItem = document.querySelectorAll('.favoriteItem')
+
+    eventHub.addEventListener("borderSize", event => {
+        //check to see if one of the other border classes is already set
+        if ("border" in event.detail) {
+            favoriteItem.forEach(e => {
+                //remove extra border classes from the elements
+                e.classList.remove('onepixel', 'threepixels', 'fivepixels')
+                return e.classList.add(event.detail.border) //add the correct class to the elements
+            })
+        }
+
     })
 }

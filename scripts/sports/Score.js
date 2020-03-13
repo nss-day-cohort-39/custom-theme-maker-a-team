@@ -4,6 +4,6 @@ export const Score = score => `
             <h2>${score.team}</h2>
         </header>
         <p class="score__points">Score: ${score.points}</p>
-        <p class="score__date">Date: ${score.timestamp}</p>
+        <p class="score__date">Date: ${new Date(score.timestamp).toLocaleDateString('en-US')}</p>
     </section>
 `

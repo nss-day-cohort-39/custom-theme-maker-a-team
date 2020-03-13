@@ -14,17 +14,39 @@
     background-color: darksalmon;
 }
 
+
 /* FONT SIZES */
 
 .xsmall {
-font-size: x-small;
+    font-size: x-small;
 }
+
 .small {
-font-size: small;
+    font-size: small;
 }
+
 .large {
-font-size: large;
+    font-size: large;
 }
+
 .xlarge {
-font-size: x-large;
+    font-size: x-large;
+}
+
+
+/* BORDER SIZES */
+
+.onepixel {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.threepixels {
+    border-width: 3px;
+    border-style: solid;
+}
+
+.fivepixels {
+    border-width: 5px;
+    border-style: solid;
 }
