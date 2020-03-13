@@ -18,7 +18,6 @@ export const BorderButtons = () => {
 }
 
 const eventHub = document.querySelector("#container")
-const borderTarget = document.querySelector(".borderSizes")
 
 // Listen for browser generated click event in this component
 eventHub.addEventListener("click", clickEvent => {
