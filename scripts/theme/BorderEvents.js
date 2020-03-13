@@ -1,6 +1,6 @@
-//events for border size
-
-
+/*
+    Responsible for the border changing event listeners
+*/
 
 export const borderListener = () => {
 
