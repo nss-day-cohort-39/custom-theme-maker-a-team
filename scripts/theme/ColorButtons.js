@@ -18,8 +18,9 @@ export const ColorButtons = () => {
 */
 export const colorButtonInitializationEvent = () => {
     const eventHub = document.querySelector("#container");
+    const backgroundColorsContentElement = document.querySelector(".colors")
 
-    eventHub.addEventListener(
+    backgroundColorsContentElement.addEventListener(
 
         "click", event => {
             if (event.target.id.startsWith("btnTheme--")) {

@@ -1,8 +1,8 @@
 import { Dashboard } from "./Dashboard.js"
 import { colorButtonInitializationEvent } from "./theme/ColorButtons.js";
-import { changeFavoriteBackgroundColor } from "./favorites/FavoriteItem.js";
-import { changeNewsBackgroundColor } from "./news/NewsItem.js";
-import { changeScoreBackgroundColor } from "./sports/Score.js";
+import { changeFavoriteBackgroundColor } from "./favorites/FavoritesList.js";
+import { changeNewsBackgroundColor } from "./news/NewsList.js";
+import { changeScoreBackgroundColor } from "./sports/ScoreList.js";
 
 
 /*
@@ -13,6 +13,6 @@ import { changeScoreBackgroundColor } from "./sports/Score.js";
 document.querySelector("#container").innerHTML = Dashboard();
 
 colorButtonInitializationEvent();
-changeFavoriteBackgroundColor();
-changeNewsBackgroundColor();
 changeScoreBackgroundColor();
+changeNewsBackgroundColor();
+changeFavoriteBackgroundColor();

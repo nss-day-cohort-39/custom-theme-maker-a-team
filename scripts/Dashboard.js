@@ -11,13 +11,3 @@ export const Dashboard = () => {
         ${FavoritesList()}
     `
 }
-const eventHub = document.querySelector("#container");
-
-    eventHub.addEventListener('backgroundColorChosen', event => {
-        const targetColorThemeClassContentElementsArray = document.querySelectorAll(".colorsSelector");
-        targetColorThemeClassContentElementsArray.forEach(e => {
-                e.classList.remove('blue', 'red', 'green', 'purple');
-                e.classList.add(event.detail.color);
-            })
-        }
-    )
