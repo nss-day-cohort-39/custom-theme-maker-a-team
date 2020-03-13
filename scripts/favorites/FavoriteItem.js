@@ -1,3 +1,5 @@
+import { formatDate } from "../dateFormatter.js"
+
 export const FavoriteItem = favorite => `
     <section class="favoriteItem">
         <header class="favoriteItem_header">
@@ -6,6 +8,6 @@ export const FavoriteItem = favorite => `
         <p>
             <img class="favoriteItem_image" src="${favorite.url}" />
         </p>
-        <p class="favoriteItem_date">Date: ${new Date(favorite.timestamp).toLocaleDateString('en-US')}</p>
+        <p class="favoriteItem_date">Date: ${formatDate(new Date(favorite.timestamp))}</p>
     </section>
 `
