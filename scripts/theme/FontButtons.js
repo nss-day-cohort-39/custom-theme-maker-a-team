@@ -22,6 +22,7 @@ eventHub.addEventListener('click', clickEvent => {
 
         const changeFontSize = new CustomEvent('fontSizeChanged', {
             detail: {
+                prefix: prefix,
                 fontSize: selectedFontSize
             }
         })

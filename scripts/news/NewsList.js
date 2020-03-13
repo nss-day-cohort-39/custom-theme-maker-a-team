@@ -21,7 +21,7 @@ export const changeNewsFontSize = () => {
     eventHub.addEventListener('fontSizeChanged', event => {
         if ("fontSize" in event.detail) {
             newsItem.forEach(e => {
-                e.classList = []
+                e.classList.remove('small', 'xsmall', 'large', 'xlarge')
                 return e.classList.add(event.detail.fontSize)
             })
         }

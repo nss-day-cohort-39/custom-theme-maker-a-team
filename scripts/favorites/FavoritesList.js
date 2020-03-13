@@ -21,7 +21,7 @@ export const changeFavoriteFontSize = () => {
     eventHub.addEventListener('fontSizeChanged', event => {
         if ("fontSize" in event.detail) {
             favoriteItem.forEach(e => {
-                e.classList = []
+                e.classList.remove('small', 'xsmall', 'large', 'xlarge')
                 return e.classList.add(event.detail.fontSize)
             })
         }
