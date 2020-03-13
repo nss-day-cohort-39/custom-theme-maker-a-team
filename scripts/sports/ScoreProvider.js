@@ -56,3 +56,9 @@ let scores = [
 ]
 
 export const useScores = () => scores.slice()
+
+export const useFilteredScores = () => {
+    const scoresCopy = scores.slice();
+    scoresCopy.sort((a, b)=>{return b.points - a.points});
+    return scoresCopy;
+}
