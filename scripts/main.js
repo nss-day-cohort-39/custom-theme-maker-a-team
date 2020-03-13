@@ -1,7 +1,7 @@
 import { Dashboard } from "./Dashboard.js"
 import { colorButtonInitializationEvent } from "./theme/ColorButtons.js";
 import { changeScoreFontSize, changeScoreBorderSize, changeScoreBackgroundColor } from "./sports/ScoreList.js"
-import { changeFavoriteFontSize, changeFavoriteBorderSize, changeFavoriteBackgroundColor } from "./favorites/FavoritesList.js"
+import { changeFavoriteFontSize, changeFavoriteBorderSize, changeFavoriteBackgroundColor, toggleFavoriteItems } from "./favorites/FavoritesList.js"
 import { changeNewsFontSize, changeNewsBorderSize, changeNewsBackgroundColor } from "./news/NewsList.js"
 
 /*
@@ -24,3 +24,6 @@ changeScoreBorderSize()
 changeNewsBorderSize()
 
 colorButtonInitializationEvent();
+
+//button toggle functions
+toggleFavoriteItems()
