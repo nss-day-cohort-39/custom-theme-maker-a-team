@@ -6,6 +6,6 @@ export const FavoriteItem = favorite => `
         <p>
             <img class="favoriteItem_image" src="${favorite.url}" />
         </p>
-        <p class="favoriteItem_date">Date: ${favorite.timestamp}</p>
+        <p class="favoriteItem_date">Date: ${new Date(favorite.timestamp).toLocaleDateString('en-US')}</p>
     </section>
 `

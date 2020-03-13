@@ -1,4 +1,5 @@
 import { Dashboard } from "./Dashboard.js"
+import { borderListener } from "./theme/BorderEvents.js"
 
 
 /*
@@ -7,3 +8,5 @@ import { Dashboard } from "./Dashboard.js"
 */
 
 document.querySelector("#container").innerHTML = Dashboard()
+
+borderListener()
