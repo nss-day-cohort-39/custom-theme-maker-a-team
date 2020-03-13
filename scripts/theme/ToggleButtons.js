@@ -4,7 +4,7 @@ export const ToggleButtons = () => {
             <fieldset>
                 <legend>Toggle Sections</legend>
 
-                <button id="btnToggle--scores">Sports Scores</button>
+                <button id="btnToggle--score">Sports Scores</button>
                 <button id="btnToggle--newsItem">News</button>
                 <button id="btnToggle--favoriteItem">Favorite Items</button>
             </fieldset>

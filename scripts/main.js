@@ -1,8 +1,8 @@
 import { Dashboard } from "./Dashboard.js"
 import { colorButtonInitializationEvent } from "./theme/ColorButtons.js";
-import { changeScoreFontSize, changeScoreBorderSize, changeScoreBackgroundColor } from "./sports/ScoreList.js"
+import { changeScoreFontSize, changeScoreBorderSize, changeScoreBackgroundColor, toggleScoreItems } from "./sports/ScoreList.js"
 import { changeFavoriteFontSize, changeFavoriteBorderSize, changeFavoriteBackgroundColor, toggleFavoriteItems } from "./favorites/FavoritesList.js"
-import { changeNewsFontSize, changeNewsBorderSize, changeNewsBackgroundColor } from "./news/NewsList.js"
+import { changeNewsFontSize, changeNewsBorderSize, changeNewsBackgroundColor, toggleNewsItems } from "./news/NewsList.js"
 
 /*
     1. Sort scores by date
@@ -27,3 +27,5 @@ colorButtonInitializationEvent();
 
 //button toggle functions
 toggleFavoriteItems()
+toggleNewsItems()
+toggleScoreItems()

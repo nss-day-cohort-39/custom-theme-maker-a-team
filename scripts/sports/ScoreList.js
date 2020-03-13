@@ -12,27 +12,26 @@ export const ScoreList = () => {
 }
 
 const render = scoreCollection => {
-    return `
+        return `
         <article class="container__panel scores">
             ${scoreCollection.map(score => Score(score)).join("")}
         </article>
     `
-}
-/*
-*   Listens for a custom event, backgroundColorChosen, from the eventHub (#container),
-*   removes any class list associated with color themes, and applies the value sent as a class.
-*/
+    }
+    /*
+     *   Listens for a custom event, backgroundColorChosen, from the eventHub (#container),
+     *   removes any class list associated with color themes, and applies the value sent as a class.
+     */
 export const changeScoreBackgroundColor = () => {
     const eventHub = document.querySelector("#container");
     const targetFavoriteElementBackgroundColorArray = document.querySelectorAll(".score");
 
     eventHub.addEventListener('backgroundColorChosen', event => {
         targetFavoriteElementBackgroundColorArray.forEach(e => {
-                e.classList.remove('blue', 'red', 'green', 'purple');
-                e.classList.add(event.detail.color);
-            })
-        }
-    )
+            e.classList.remove('blue', 'red', 'green', 'purple');
+            e.classList.add(event.detail.color);
+        })
+    })
 }
 
 export const changeScoreFontSize = () => {
@@ -63,5 +62,17 @@ export const changeScoreBorderSize = () => {
             })
         }
 
+    })
+}
+
+//show/hide the favorite items when toggle button is pressed
+export const toggleScoreItems = () => {
+    const eventHub = document.querySelector('#container')
+    const scores = document.querySelector('.scores')
+
+    eventHub.addEventListener("toggleOptionClicked", event => {
+        if (event.detail.toggleOption === 'score') {
+            scores.classList.toggle('hidden');
+        }
     })
 }

@@ -63,13 +63,11 @@ export const changeFavoriteBorderSize = () => {
 //show/hide the favorite items when toggle button is pressed
 export const toggleFavoriteItems = () => {
     const eventHub = document.querySelector('#container')
-    const favoriteItems = document.querySelectorAll('.favoriteItem')
+    const favorites = document.querySelector('.favorites')
 
     eventHub.addEventListener("toggleOptionClicked", event => {
         if (event.detail.toggleOption === 'favoriteItem') {
-            for (const favoriteItem of favoriteItems) {
-                favoriteItem.classList.toggle('hidden');
-            }
+            favorites.classList.toggle('hidden');
         }
     })
 }
