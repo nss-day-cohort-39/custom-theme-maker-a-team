@@ -16,3 +16,41 @@ export const BorderButtons = () => {
         </article>
     `
 }
+
+const eventHub = document.querySelector("#container")
+const borderTarget = document.querySelector(".borderSizes")
+
+// Listen for browser generated click event in this component
+eventHub.addEventListener("click", clickEvent => {
+
+    // Make sure it was one of the border size buttons
+    if (clickEvent.target.name === "pixelsize") { //match the radio button's name property
+
+        // Get the chosen border size
+        const chosenBorderSize = clickEvent.target.value
+
+        const borderChosenEvent = new CustomEvent("borderSize", {
+            detail: {
+                border: chosenBorderSize
+            }
+        })
+
+        eventHub.dispatchEvent(borderChosenEvent)
+    }
+})
+
+
+eventHub.addEventListener('click', clickEvent => {
+    if (clickEvent.target.id.startsWith('btnFont--')) {
+        const [prefix, fontSize] = clickEvent.target.id.split('--')
+        const selectedFontSize = fontSize
+
+        const changeFontSize = new CustomEvent('fontSizeChanged', {
+            detail: {
+                prefix: prefix,
+                fontSize: selectedFontSize
+            }
+        })
+        eventHub.dispatchEvent(changeFontSize)
+    }
+})
