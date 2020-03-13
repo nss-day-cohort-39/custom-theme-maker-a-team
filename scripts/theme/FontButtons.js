@@ -12,7 +12,7 @@ export const FontButtons = () => {
         </article>
     `
 }
-export const colorButtonInitializationEvent = () => {
+
     const eventHub = document.querySelector('#container')
 
     eventHub.addEventListener('click', clickEvent => {
@@ -29,4 +29,3 @@ export const colorButtonInitializationEvent = () => {
             eventHub.dispatchEvent(changeFontSize)
         }
     })
-}

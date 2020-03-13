@@ -38,19 +38,3 @@ eventHub.addEventListener("click", clickEvent => {
         eventHub.dispatchEvent(borderChosenEvent)
     }
 })
-
-
-eventHub.addEventListener('click', clickEvent => {
-    if (clickEvent.target.id.startsWith('btnFont--')) {
-        const [prefix, fontSize] = clickEvent.target.id.split('--')
-        const selectedFontSize = fontSize
-
-        const changeFontSize = new CustomEvent('fontSizeChanged', {
-            detail: {
-                prefix: prefix,
-                fontSize: selectedFontSize
-            }
-        })
-        eventHub.dispatchEvent(changeFontSize)
-    }
-})
