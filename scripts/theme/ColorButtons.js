@@ -12,3 +12,27 @@ export const ColorButtons = () => {
         </article>
     `
 }
+/*
+*   Dispatches a custom event, backgroundColorChosen, to the eventHub (#container)
+*   detail of the value of the element.startsWith (#btnTheme) is dispatched with the event.
+*/
+export const colorButtonInitializationEvent = () => {
+    const eventHub = document.querySelector("#container");
+    const backgroundColorsContentElement = document.querySelector(".colors")
+
+    backgroundColorsContentElement.addEventListener(
+
+        "click", event => {
+            if (event.target.id.startsWith("btnTheme--")) {
+                const [prefix, chosenColor] = event.target.id.split("--");
+                const changeBackgroundColorButtonClicked = new CustomEvent("backgroundColorChosen", {
+
+                    detail: {
+                        color: chosenColor
+                        }
+                })
+            eventHub.dispatchEvent(changeBackgroundColorButtonClicked);
+            }
+        }
+    )
+}

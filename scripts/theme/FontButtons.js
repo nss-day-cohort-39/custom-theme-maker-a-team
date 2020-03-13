@@ -12,20 +12,21 @@ export const FontButtons = () => {
         </article>
     `
 }
+export const colorButtonInitializationEvent = () => {
+    const eventHub = document.querySelector('#container')
 
-const eventHub = document.querySelector('#container')
+    eventHub.addEventListener('click', clickEvent => {
+        if (clickEvent.target.id.startsWith('btnFont--')) {
+            const [prefix, fontSize] = clickEvent.target.id.split('--')
+            const selectedFontSize = fontSize
 
-eventHub.addEventListener('click', clickEvent => {
-    if (clickEvent.target.id.startsWith('btnFont--')) {
-        const [prefix, fontSize] = clickEvent.target.id.split('--')
-        const selectedFontSize = fontSize
-
-        const changeFontSize = new CustomEvent('fontSizeChanged', {
-            detail: {
-                prefix: prefix,
-                fontSize: selectedFontSize
-            }
-        })
-        eventHub.dispatchEvent(changeFontSize)
-    }
-})
+            const changeFontSize = new CustomEvent('fontSizeChanged', {
+                detail: {
+                    prefix: prefix,
+                    fontSize: selectedFontSize
+                }
+            })
+            eventHub.dispatchEvent(changeFontSize)
+        }
+    })
+}
