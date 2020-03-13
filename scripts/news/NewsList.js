@@ -7,27 +7,26 @@ export const NewsList = () => {
 }
 
 const render = newsCollection => {
-    return `
-        <article class="container__panel scores">
+        return `
+        <article class="container__panel news">
             ${newsCollection.map(news => NewsItem(news)).join("")}
         </article>
     `
-}
-/*
-*   Listens for a custom event, backgroundColorChosen, from the eventHub (#container),
-*   removes any class list associated with color themes, and applies the value sent as a class.
-*/
+    }
+    /*
+     *   Listens for a custom event, backgroundColorChosen, from the eventHub (#container),
+     *   removes any class list associated with color themes, and applies the value sent as a class.
+     */
 export const changeNewsBackgroundColor = () => {
     const eventHub = document.querySelector("#container");
     const targetFavoriteElementBackgroundColorArray = document.querySelectorAll(".newsItem");
 
     eventHub.addEventListener('backgroundColorChosen', event => {
         targetFavoriteElementBackgroundColorArray.forEach(e => {
-                e.classList.remove('blue', 'red', 'green', 'purple');
-                e.classList.add(event.detail.color);
-            })
-        }
-    )
+            e.classList.remove('blue', 'red', 'green', 'purple');
+            e.classList.add(event.detail.color);
+        })
+    })
 }
 
 export const changeNewsFontSize = () => {
@@ -58,5 +57,17 @@ export const changeNewsBorderSize = () => {
             })
         }
 
+    })
+}
+
+//show/hide the favorite items when toggle button is pressed
+export const toggleNewsItems = () => {
+    const eventHub = document.querySelector('#container')
+    const news = document.querySelector('.news')
+
+    eventHub.addEventListener("toggleOptionClicked", event => {
+        if (event.detail.toggleOption === 'newsItem') {
+            news.classList.toggle('hidden');
+        }
     })
 }

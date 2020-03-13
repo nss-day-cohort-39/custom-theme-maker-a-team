@@ -7,27 +7,26 @@ export const FavoritesList = () => {
 }
 
 const render = favoriteCollection => {
-    return `
+        return `
         <article class="container__panel favorites">
             ${favoriteCollection.map(favorite => FavoriteItem(favorite)).join("")}
         </article>
     `
-}
-/*
-*   Listens for a custom event, backgroundColorChosen, from the eventHub (#container),
-*   removes any class list associated with color themes, and applies the value sent as a class.
-*/
+    }
+    /*
+     *   Listens for a custom event, backgroundColorChosen, from the eventHub (#container),
+     *   removes any class list associated with color themes, and applies the value sent as a class.
+     */
 export const changeFavoriteBackgroundColor = () => {
     const eventHub = document.querySelector("#container");
     const targetFavoriteElementBackgroundColorArray = document.querySelectorAll(".favoriteItem");
 
     eventHub.addEventListener('backgroundColorChosen', event => {
         targetFavoriteElementBackgroundColorArray.forEach(e => {
-                e.classList.remove('blue', 'red', 'green', 'purple');
-                e.classList.add(event.detail.color);
-            })
-        }
-    )
+            e.classList.remove('blue', 'red', 'green', 'purple');
+            e.classList.add(event.detail.color);
+        })
+    })
 }
 
 export const changeFavoriteFontSize = () => {
@@ -58,5 +57,17 @@ export const changeFavoriteBorderSize = () => {
             })
         }
 
+    })
+}
+
+//show/hide the favorite items when toggle button is pressed
+export const toggleFavoriteItems = () => {
+    const eventHub = document.querySelector('#container')
+    const favorites = document.querySelector('.favorites')
+
+    eventHub.addEventListener("toggleOptionClicked", event => {
+        if (event.detail.toggleOption === 'favoriteItem') {
+            favorites.classList.toggle('hidden');
+        }
     })
 }
